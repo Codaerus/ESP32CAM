@@ -87,3 +87,19 @@ void configuracionCamara() {
   seteoCamara->set_dcw(seteoCamara, 1);
   seteoCamara->set_colorbar(seteoCamara, 0);
 }
+
+
+
+void initMicroSDCard(){
+  //Inicia la tarjeta SD
+  Serial.println("Montaje de la Tarjeta MicroSD");
+  if(!SD_MMC.begin()){
+    Serial.println("Error al montar la tarjeta  MicroSD");
+    return;
+  }
+  uint8_t cardType = SD_MMC.cardType();
+  if(cardType == CARD_NONE){
+    Serial.println("No se encontró ninguna tarjeta MicroSD");
+    return;
+  }
+}
