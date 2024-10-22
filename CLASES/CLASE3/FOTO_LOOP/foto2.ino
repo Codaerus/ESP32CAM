@@ -27,7 +27,7 @@ void setup() {
 }
 
 void loop() {
-   if(millis()-t>10000){
+   if(millis()-t>60000){
         //tomar y guardar foto
         String path = "/foto" + String(contadorFoto)+ ".jpg";
         takeNewPhoto(path);
