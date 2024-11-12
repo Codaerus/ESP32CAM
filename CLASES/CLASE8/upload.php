@@ -1,6 +1,6 @@
 <?php
 // Ruta donde se guardará la imagen
-$uploadDir = 'C:\ardu24\xampp\htdocs\dashboard\FOTO\upload';  // Ruta completa en el servidor
+$uploadDir = 'C:\ardu24\xampp\htdocs\dashboard\DATOS';  // Ruta completa en el servidor
 
 // Obtener los datos JSON de la solicitud POST
 $data = file_get_contents("php://input");
