@@ -1,5 +1,5 @@
 #include "esp_camera.h"
-#include <esp_wifi.h>
+#include <WiFi.h>
 #include <HTTPClient.h>
 #include <Base64.h>
 //Incluimos pinout
@@ -19,7 +19,7 @@ void captureSend(){
   http.begin(serverURL);
   http.addHeader("Content-Type", "application/json");
   //Creamos un String JSON
-  String jsonPayload = "{imageData:" + imageBase64 + "}";
+  String jsonPayload = "{\"imageData\":\"" + imageBase64 + "\"}";
   int code = http.POST(jsonPayload);
   if (code > 0){
     String response = http.getString();
@@ -48,7 +48,7 @@ void setup_wifi(){
   WiFi.begin("MOVISTAR_78A8","NS2ajtQJ7TtDt9m");//DHCP
   while(WiFi.status() != WL_CONNECTED)
     {
-      Serial.println(".");
+      Serial.print(".");
       delay(300);
     }
   Serial.println(WiFi.localIP());
