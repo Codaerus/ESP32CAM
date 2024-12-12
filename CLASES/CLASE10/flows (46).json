@@ -1,0 +1,79 @@
+[
+    {
+        "id": "12b28498f00c9844",
+        "type": "inject",
+        "z": "8ac7e522e32e1d52",
+        "name": "",
+        "props": [],
+        "repeat": "0.1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.1",
+        "topic": "",
+        "x": 380,
+        "y": 260,
+        "wires": [
+            [
+                "7178975208b5235a"
+            ]
+        ]
+    },
+    {
+        "id": "7178975208b5235a",
+        "type": "function",
+        "z": "8ac7e522e32e1d52",
+        "name": "",
+        "func": "msg.payload = new Date().getTime();\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 200,
+        "wires": [
+            [
+                "a0904ae962344120"
+            ]
+        ]
+    },
+    {
+        "id": "a0904ae962344120",
+        "type": "ui_template",
+        "z": "8ac7e522e32e1d52",
+        "group": "61f8091b.153e34",
+        "name": "",
+        "order": 2,
+        "width": "12",
+        "height": "8",
+        "format": "<img src='http://192.168.1.11/640x480.jpg?nocache={{msg.payload}}' style='width:100%;'/>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 820,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61f8091b.153e34",
+        "type": "ui_group",
+        "name": "Cámara",
+        "tab": "3f9c8ac4.8eafee",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "3f9c8ac4.8eafee",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
